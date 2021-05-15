@@ -31,3 +31,6 @@ jobs:
         run: |
           pip3 install -r ./app/requirements.txt
           echo Finished installing dependencies.
+
+          echo "## Data Visualization Plots" > report.md
+          cml-send-comment report.md
