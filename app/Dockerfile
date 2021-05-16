@@ -6,6 +6,8 @@ WORKDIR /app
 COPY requirements.txt /app/requirements.txt
 COPY . ./app
 
+RUN apt-get update
+RUN apt-get -y install npm
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade -r requirements.txt 
 
