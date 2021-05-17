@@ -1,15 +1,10 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.8-slim-buster
+FROM dvcorg/cml-py3:latest 
 
 WORKDIR /app
 COPY requirements.txt /app/requirements.txt
-COPY . ./app
-
-RUN apt-get update
-RUN apt-get -y install npm
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir --upgrade -r requirements.txt 
+RUN pip3 install -r requirements.txt 
 
 EXPOSE 8080
 
