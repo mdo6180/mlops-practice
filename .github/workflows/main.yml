@@ -44,6 +44,4 @@ jobs:
           echo "## Data Visualization Plots" > report.md
           echo report.md is created
 
-          cml-publish ./output/normal.png >> report.md
-
           cml-send-comment report.md
