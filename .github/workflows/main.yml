@@ -20,10 +20,12 @@ jobs:
     steps:
       - uses: iterative/setup-cml@v1
       - uses: actions/checkout@v2
-      - name: "Deploy runner on EC2"
+      - name: "first self-hosted runner"
         shell: bash
+        env:
+          repo_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           # Publish report with CML
-          cat metrics.txt > report.md
+          echo "## Data Visualization Plots" > report.md
           cml-send-comment report.md
           
