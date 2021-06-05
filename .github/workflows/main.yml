@@ -23,7 +23,7 @@ jobs:
       - name: "first self-hosted runner"
         shell: bash
         env:
-          repo_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repo_token: ${{ secrets.mlops }}
         run: |
           # Publish report with CML
           echo "## Data Visualization Plots" > report.md
