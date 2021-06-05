@@ -4,3 +4,5 @@ env/
 sample docker images/
 venv/
 /output
+github_tokens.txt
+/actions-runner

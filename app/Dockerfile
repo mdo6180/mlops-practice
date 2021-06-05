@@ -1,19 +1,16 @@
 # syntax=docker/dockerfile:1
 
-FROM nikolaik/python-nodejs:latest
+FROM dvcorg/cml-py3:latest
+
+ENV PATH="/venv/bin:$PATH"
 
 WORKDIR /app
-
-COPY requirements.txt /app/requirements.txt
-RUN pip3 install -r requirements.txt
-
-RUN npm i -g @dvcorg/cml
 
 COPY . ./app
 
 EXPOSE 8080
 
-CMD [ "python3", "./app/app.py"]
+CMD [ "python3", "/app/app.py"]
 
 
 # how to push image to docker hub:
