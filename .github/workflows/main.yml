@@ -18,13 +18,14 @@ jobs:
   deploy-runner:
     runs-on: [self-hosted]
     steps:
-      - uses: iterative/setup-cml@v1
       - uses: actions/checkout@v2
       - name: "first self-hosted runner"
         shell: bash
         env:
           repo_token: ${{ secrets.PERSONAL_ACCESS_TOKENS }}
         run: |
+          docker-compose up
+          
           # Publish report with CML
           echo "## Data Visualization Plots" > report.md
           cml-send-comment report.md
